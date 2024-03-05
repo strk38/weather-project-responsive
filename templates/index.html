@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weather Data</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+    <div class='body'>
+        <div class='container'>
+            <h1>Weather App</h1>
+        </div>
+        <div class='search'>
+            <div class='search-left'>
+                <form method='POST'>
+                    {% csrf_token %}
+                    <input type='text' name='city' placeholder='Enter City'>
+                    <button type='submit'>Search</button>
+                </form>
+            </div>
+            <div class="search-mid">
+                <h3><u><b>Today</b></u></h3>
+                <h3>Week</h3>
+            </div>
+            <div class="search-right">
+                <h3>Mode</h3>
+                <h3>Login</h3>
+            </div>
+        </div>
+        <div class='weather'>
+            <div class="group-one">
+                <div class='g-one'>
+                    <div class='p one'>
+                        <p>
+                            <img src='http://openweathermap.org/img/w/{{icon}}.png' width='100px'>
+                        </p>
+                    </div>
+                    <div class='p two'>
+                        <h1>{{temp}}&#176; C</h1>
+                    </div>
+                    <div class='p three'>
+                        <h2>{{day}}</h2>
+                    </div>
+                    <div class='p four'>
+                        <h3>{{description}}</h3>
+                    </div>
+                    <div class='p five'>
+                        <h2>{{city}}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="group-two">
+                <div class='section-two'>
+
+                    <div class='longitude'>
+                        <h2>Longitude</h2>
+                        <h1>{{longitude}}</h1>
+                    </div>
+
+                    <div class='latitude'>
+                        <h2>Latitude</h2>
+                        <h1>{{latitude}}</h1>
+                    </div>
+                </div>
+
+                <div class='section-three'>
+                    <div class='wind-speed'>
+                        <h2>Wind Status</h2>
+                        <h1>{{wind_speed}}</h1>
+                    </div>
+
+                    <div class='feels-like'>
+                        <h2>Feels Like</h2>
+                        <h1>{{feels_like}}</h1>
+                    </div>
+
+                    <div class='sun'>
+                        <h2>Sunrise and Sunset</h2>
+                        <div class='rise-set'>
+                            <h1>{{sunrise}}</h1>
+                            <h1>{{sunset}}</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='section-four'>
+                    <div class='humidity'>
+                        <h2>Humidity</h2>
+                        <h1>{{humidity}}</h1>
+                    </div>
+
+                    <div class='temp-max'>
+                        <h2>Temp max</h2>
+                        <h1>{{temp_max}}</h1>
+                    </div>
+
+                    <div class='temp-min'>
+                        <h2>Temp min</h2>
+                        <h1>{{temp_min}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
