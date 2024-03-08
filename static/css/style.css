@@ -31,7 +31,7 @@ h3 {
 
 
 .container {
-    text-align: left;
+
     text-align: center;
 }
 
@@ -46,9 +46,9 @@ h3 {
 }
 
 .search-left {
-    width: 38%;
+    width: 100%;
     display: inline-flex;
-    justify-content: left;
+    justify-content: center;
 }
 
 /* .search-mid {
