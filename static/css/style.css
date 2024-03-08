@@ -1,12 +1,34 @@
+body {
+    background-image: url("img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
 .body {
-    background-color: white;
-    border: 20px solid rgb(36, 35, 35);
+    border: 20px solid rgb(36, 35, 35, 0.5);
     border-radius: 60px;
     margin: 5% 5%;
     padding: 2%;
     width: 80%;
-    height: 70vh;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.4);
 }
+
+h1,
+h2,
+h3 {
+    color: antiquewhite;
+    font-family: sans-serif;
+
+}
+
+
+/* h3 {
+    font-family: sans-serif;
+} */
+
+
 
 .container {
     text-align: left;
@@ -28,7 +50,7 @@
     justify-content: left;
 }
 
-.search-mid {
+/* .search-mid {
     width: 28%;
     display: inline-flex;
     justify-content: center;
@@ -50,28 +72,42 @@
     padding: 0px 10px;
     font-family: 'Courier New';
     font-weight: bolder;
-}
+} */
 
 input {
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.1);
     width: 200px;
     height: 35px;
-    border-style: none;
+    border-style: hidden;
     border-bottom: 1px solid gray;
+    font-size: 1.5rem;
+    color: aliceblue;
+}
+
+input:hover {
+    transform: scale(1.1);
 }
 
 button {
     border-style: none;
-    height: 30px;
-    width: 80px;
-    margin: 2px;
-    padding: 5px;
+    height: 50px;
+    width: 50px;
+    margin-top: 2px;
+    padding: 0px 2px;
     border-radius: 20px;
+
+    background-color: rgba(0, 0, 0, 0);
+    /* Fully transparent */
+    border: 1px solid rgba(0, 0, 0, 0);
+    /* Fully transparent */
 }
 
 button:hover {
-    transform: scale(1.1);
-    background-color: beige;
+    transform: scale(1.2);
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Fully transparent */
+    border: 1px solid rgba(0, 0, 0, 0);
+    /* Fully transparent */
 }
 
 .weather {
@@ -96,6 +132,10 @@ button:hover {
 
 .p {
     padding: 2px;
+}
+
+.p:hover {
+    transform: scale(1.2);
 }
 
 .group-two {
@@ -125,3 +165,35 @@ button:hover {
 /* .group .two {
     flex-direction: column;
 } */
+
+.longitude:hover {
+    transform: scale(1.2);
+}
+
+.latitude:hover {
+    transform: scale(1.2);
+}
+
+.sun:hover {
+    transform: scale(1.2);
+}
+
+.wind-speed:hover {
+    transform: scale(1.2);
+}
+
+.feels-like:hover {
+    transform: scale(1.2);
+}
+
+.humidity:hover {
+    transform: scale(1.2);
+}
+
+.temp-max:hover {
+    transform: scale(1.2);
+}
+
+.temp-min:hover {
+    transform: scale(1.2);
+}

@@ -28,9 +28,36 @@ def home(request):
     wind_speed=data['wind']['speed']
     feels_like=data['main']['feels_like']
 
-    sunrise=data['sys']['sunrise']
-    sunset=data['sys']['sunset']
+    timezone=data['timezone']
+    t_hours=timezone//3600
+    t_min=(timezone%3600)//60
+    #print('h ',t_hours,' m ',t_min)
 
+    sunrise_m=data['sys']['sunrise']
+    sunrise_m=str(datetime.datetime.utcfromtimestamp(sunrise_m))
+
+    sunrise=0
+    sr_h=int(sunrise_m[11:13])+t_hours
+    sr_min=int(sunrise_m[14:16])+t_min
+    if sr_h<10 and sr_min<10:
+        sunrise='0'+str(sr_h)+':0'+str(sr_min)+':'+sunrise_m[17:]
+    else:
+        sunrise=str(sr_h)+':'+str(sr_min)+':'+sunrise_m[17:]
+    #print(sunrise[11:])
+
+    sunset_m=data['sys']['sunset']
+    sunset_m=str(datetime.datetime.utcfromtimestamp(sunset_m))
+    sunset_m=sunset_m[11:]
+
+    sunset=0
+    ss_h=int(sunset_m[:2])+t_hours
+    ss_min=int(sunset_m[3:5])+t_min
+    if ss_min<10:
+        sunset=str(ss_h)+':0'+str(ss_min)+':'+sunset_m[6:]
+    else:
+        sunset=str(ss_h)+':0'+str(ss_min)+':'+sunset_m[6:]
+    #print(sunset[:])
+    
     humidity=data['main']['humidity']
     temp_max=data['main']['temp_max']
     temp_min=data['main']['temp_min']
