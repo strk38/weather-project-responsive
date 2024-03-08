@@ -42,6 +42,7 @@ h3 {
 .search {
     display: inline-flex;
     width: 100%;
+
 }
 
 .search-left {
@@ -82,6 +83,7 @@ input {
     border-bottom: 1px solid gray;
     font-size: 1.5rem;
     color: aliceblue;
+    border-radius: 20px;
 }
 
 input:hover {
@@ -196,4 +198,69 @@ button:hover {
 
 .temp-min:hover {
     transform: scale(1.2);
+}
+
+@media screen and (max-width:640px) {
+    body {
+        width: fit-content;
+        margin: 0;
+    }
+
+    .body {
+        border: none;
+        border-radius: 20px;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.1);
+        height: fit-content;
+    }
+
+    .container {
+        height: 100%;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .group-one {
+        width: 30%;
+    }
+
+    .search-left {
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+    }
+
+    .group-two {
+        width: 70%;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: right;
+    }
+
+    .section-two {
+        justify-content: space-around;
+    }
+
+    .section-three {
+        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-around;
+
+    }
+
+    .section-four {
+        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        height: 80%;
+
+    }
+
 }
